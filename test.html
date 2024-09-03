@@ -4,25 +4,10 @@
         <title>notepad</title>
     </head>
     <body>
-        <input id="packageNameInput">
-        <button id="btn" onclick="generateLink()">링크 만들기</button>
-        <div id="links">
-        </div>
-
+    	<p>
+		<span style="font-size:20px">
+			<a href="pmangplus://closeview?close=true">닫기</a>
+		</span>
+	</p>
     </body>
-	
-	<script>
-		function generateLink(){
-			let packageName = document.querySelector('#packageNameInput').value;
-			let str =
-				`<p><span style="font-size:20px"><a href="javascript:open(location, '_self').close();window.location.href='pmangplus://closeview?close=true'">닫기</a></span></p>`;
-			document.querySelector('#links').innerHTML = str;
-		}
-		let param = new URLSearchParams(location.search).get('packageName')
-		if (param != '') {
-			document.querySelector('#packageNameInput').value = param;
-			document.querySelector('#btn').onclick();
-			
-		}
-	</script>
 </html>
