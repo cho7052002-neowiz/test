@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>notepad</title>
+    </head>
+    <body>
+        <input id="packageNameInput">
+        <button id="btn" onclick="generateLink()">링크 만들기</button>
+        <div id="links">
+        </div>
+
+    </body>
+	
+	<script>
+		function generateLink(){
+			let packageName = document.querySelector('#packageNameInput').value;
+			let str =
+				`<p><span style="font-size:20px">닫기<a href="pmangplus://closeview?close=true"></a></span></p>`;
+			document.querySelector('#links').innerHTML = str;
+		}
+		let param = new URLSearchParams(location.search).get('packageName')
+		if (param != '') {
+			document.querySelector('#packageNameInput').value = param;
+			document.querySelector('#btn').onclick();
+			
+		}
+	</script>
+</html>
