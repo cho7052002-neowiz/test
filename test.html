@@ -15,7 +15,7 @@
 		function generateLink(){
 			let packageName = document.querySelector('#packageNameInput').value;
 			let str =
-				`<p><span style="font-size:20px"><a href="pmangplus://closeview?close=true">닫기</a></span></p>`;
+				`<p><span style="font-size:20px"><a href="javascript:open(location, '_self').close();window.location.href='pmangplus://closeview?close=true'">닫기</a></span></p>`;
 			document.querySelector('#links').innerHTML = str;
 		}
 		let param = new URLSearchParams(location.search).get('packageName')
